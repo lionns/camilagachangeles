@@ -40,7 +40,7 @@ export const Typography = <
 
   return (
     <Component className={classes} {...props}>
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      {isHTML ? <div dangerouslySetInnerHTML={{ __html: content }} /> : content}
     </Component>
   );
 };

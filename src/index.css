@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Cinzel Bold";
-  src: local("Cinzel-Bold.ttf"),
-    url("./fonts/Cinzel/static/Cinzel-Bold.ttf") format("truetype");
+  font-family: "Cinzel";
+  src: local("Cinzel-VariableFont_wght.ttf"),
+    url("./fonts/Cinzel/Cinzel-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {

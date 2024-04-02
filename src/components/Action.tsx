@@ -1,3 +1,5 @@
+import { Arrow } from "../icons/Arrow";
+
 type ActionOwnProps<E extends React.ElementType = React.ElementType> = {
   content: string;
   color: keyof typeof colorClasses;
@@ -31,12 +33,12 @@ export const Action = <
   const Component = as || __DEFAULT_ELEMENT__;
 
   const classes = `inline-block cursor-pointer px-3 py-3.5 font-serif uppercase text-[14px] font-bold tracking-wider ${
-    colorClasses[color as keyof typeof colorClasses]
-  } ${customClasses}`;
+    icon && "flex justify-center items-center gap-2"
+  } ${colorClasses[color as keyof typeof colorClasses]} ${customClasses}`;
 
   return (
     <Component className={classes} {...props}>
-      {content}
+      {content} {icon ? <Arrow /> : ""}
     </Component>
   );
 };

@@ -5,7 +5,7 @@ import HeroTitle from "../icons/HeroTitle.svg";
 export const HeroLanding = () => (
   <section className="flex flex-col items-end md:flex-row justify-center md:items-center md:max-h-dvh overflow-hidden">
     <div className="flex flex-col gap-5 md:gap-10 justify-center items-start p-5 md:px-10 md:p-0">
-      <Typography as="h1" variant="title" color="marron" customClasses="w-full" content={`<img src="${HeroTitle}"/><span class="sr-only">Camila Gacha Ángeles</span>`}/>
+      <Typography as="h1" variant="title" color="marron" customClasses="w-full" isHTML={true} content={`<img src="${HeroTitle}"/><span class="sr-only">Camila Gacha Ángeles</span>`}/>
       <Typography
         as="p"
         variant="body"
