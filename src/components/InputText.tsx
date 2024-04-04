@@ -21,12 +21,12 @@ export const InputText = ({
   classList?: string;
   required?: boolean;
 }) => {
-  const classes: string = `w-full px-4 py-3 border-2 border-marron-profundo bg-gris-suave focus:outline-none focus:border-terracota-blush focus:text-terracota-blush placeholder:text-marron-profundo-50 ${errorMessage && ("border-rojo-suave bg-rojo-suave-10")} ${classList}`;
+  const classes: string = `w-full px-4 py-3 border-[1.5px] border-marron-profundo bg-gris-suave focus:outline-none focus:border-terracota-blush focus:text-terracota-blush placeholder:text-marron-profundo-50 ${errorMessage && ("border-rojo-suave bg-rojo-suave-10")} ${classList}`;
 
   return (
     <div>
       <label
-        className="block font-serif uppercase text-body-sm md:text-body-md"
+        className="block font-serif !font-semibold uppercase text-body-sm md:text-body-md"
         htmlFor={id}
       >
         {label} {required && <span className="text-rojo-suave">*</span>}

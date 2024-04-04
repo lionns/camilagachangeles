@@ -15,7 +15,7 @@ export const EventsLanding = () => {
   }, []);
 
   return (
-    <section className="space-y-10">
+    <section id="seccion-eventos" className="space-y-10">
       {events.length > 0 && (
         <>
           <Typography

@@ -7,7 +7,7 @@ export const InputButton = ({
   text: string;
   classList?: string;
 }) => {
-  const classes: string = `w-full px-4 py-3 border-2 border-marron-profundo bg-marron-profundo font-serif uppercase text-gris-suave hover:bg-terracota-blush hover:text-marron-profundo ${classList}`;
+  const classes: string = `w-full px-4 py-3 border-2 border-marron-profundo bg-marron-profundo font-serif font-semibold uppercase text-gris-suave hover:bg-terracota-blush hover:text-marron-profundo ${classList}`;
   return (
     <button className={classes} type={type}>
       {text}

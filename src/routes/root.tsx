@@ -1,13 +1,17 @@
-import { EventsLanding } from "../sections/EventsLanding";
-import { HeroLanding } from "../sections/HeroLanding";
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
+import { Landing } from "./Landing";
+import { ErrorPage } from "../error-page";
+import { Login } from "./Login";
 
-export const Root = () => {
-  return (
-    <>
-      <HeroLanding />
-      <main className="mx-auto min-h-screen max-w-6xl px-5 pt-16 text-center">
-        <EventsLanding />
-      </main>
-    </>
-  );
-};
+export const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Landing />} errorElement={<ErrorPage />}>
+      <Route path="login" element={<Login />} />
+      <Route path="logout" />
+    </Route>
+  )
+);

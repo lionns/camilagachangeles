@@ -13,7 +13,7 @@ export const Error = ({ error, message, contextMessage }: ErrorProps) => (
     <a className="w-96" href="/">
       <img src={Logo} alt="Camila Gacha Ángeles" />
     </a>
-    <div className="m-5 md:m-10 text-center">
+    <div className="flex flex-col items-center m-5 md:m-10 text-center">
       <Typography
         as="h1"
         variant="title"
@@ -25,7 +25,7 @@ export const Error = ({ error, message, contextMessage }: ErrorProps) => (
         as="h2"
         variant="subtitle"
         color="marron"
-        content={`<p>${message}</p>`}
+        content={`${message}`}
       />
 
       <p className="font-sans my-5 max-w-[410px] text-body-sm md:text-body-md">
