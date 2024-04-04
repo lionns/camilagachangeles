@@ -14,7 +14,7 @@ export const InputFile = ({
   return (
     <div>
       <label
-        className="block font-serif uppercase text-body-sm md:text-body-md"
+        className="block font-serif !font-semibold uppercase text-body-sm md:text-body-md"
         htmlFor={id}
       >
         {label}

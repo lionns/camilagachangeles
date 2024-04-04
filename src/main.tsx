@@ -8,12 +8,16 @@ import { ErrorPage } from "./error-page";
 import { Admin } from "./routes/Admin";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { Profile } from "./routes/Profile";
+import { Signup } from "./routes/Signup";
+import { ForgotPassword } from "./routes/ForgotPassword";
 
 const root = createRoot(document.getElementById("root")!);
 
 const router = createBrowserRouter([
   { path: "/", element: <Landing />, errorElement: <ErrorPage /> },
   { path: "/inicio-de-sesion", element: <Login /> },
+  { path: "/registro", element: <Signup /> },
+  { path: "/olvidaste-tu-contrasena", element: <ForgotPassword /> },
   {
     path: "/admin",
     element: (

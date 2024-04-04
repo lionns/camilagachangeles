@@ -1,5 +1,5 @@
 export const PasswordRules = () => (
-  <section className="border rounded-sm border-verde-suave bg-verde-suave-10 p-5 font-sans text-body-sm md:text-body-md text-verde-suave">
+  <section className="mb-3 border rounded-sm border-verde-suave bg-verde-suave-10 p-5 font-sans text-body-sm md:text-body-md text-verde-suave">
     <ul>
       <li>Debe contener al menos una letra minúscula.</li>
       <li>Debe contener al menos una letra mayúscula.</li>

@@ -5,6 +5,7 @@ type TypographyOwnProps<E extends React.ElementType = React.ElementType> = {
   as?: E;
   customClasses?: string;
   isHTML?: boolean;
+  customClassesDiv?: string;
 };
 
 const __DEFAULT_ELEMENT__ = "h2";
@@ -30,6 +31,7 @@ export const Typography = <
   as,
   customClasses,
   isHTML,
+  customClassesDiv,
   ...props
 }: TypographyOwnProps<E>) => {
   const classes = `${variantClasses[variant as keyof typeof variantClasses]} ${
@@ -40,7 +42,14 @@ export const Typography = <
 
   return (
     <Component className={classes} {...props}>
-      {isHTML ? <div dangerouslySetInnerHTML={{ __html: content }} /> : content}
+      {isHTML ? (
+        <div
+          className={customClassesDiv}
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+      ) : (
+        content
+      )}
     </Component>
   );
 };
