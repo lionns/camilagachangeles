@@ -3,7 +3,7 @@ import { Typography } from "../components/Typography";
 import HeroTitle from "../icons/HeroTitle.svg";
 
 export const HeroLanding = () => (
-  <section className="flex flex-col items-end md:flex-row justify-center md:items-center md:max-h-dvh overflow-hidden">
+  <section className="pt-[77px] md:pt-[80px] flex flex-col items-end md:flex-row justify-center md:items-center md:max-h-dvh overflow-hidden">
     <div className="flex flex-col gap-5 md:gap-10 justify-center items-start p-5 md:px-10 md:p-0">
       <Typography as="h1" variant="title" color="marron" customClasses="w-full" isHTML={true} content={`<img src="${HeroTitle}"/><span class="sr-only">Camila Gacha Ángeles</span>`}/>
       <Typography

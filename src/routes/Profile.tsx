@@ -5,6 +5,8 @@ import { DecodeInfoProps } from "../types/DecodeInfoProps";
 import { jwtDecode } from "jwt-decode";
 import { Typography } from "../components/Typography";
 import { ProfileForm } from "../forms/ProfileForm";
+import { Header } from "../sections/Header";
+import { Footer } from "../sections/Footer";
 
 export const Profile = () => {
   const { userJWT } = useAuth();
@@ -23,14 +25,15 @@ export const Profile = () => {
         setUserInfo(data);
         setLoading(false);
       })
-      .catch((e) => {
-        console.error(e);
+      .catch(() => {
         setLoading(false);
       });
   }, [userJWT]);
 
   return (
-    <main className="mx-auto min-h-screen max-w-4xl px-5 pt-16">
+    <div className="relative">
+    <Header loading={loading} userInfo={userInfo} />
+    <main className="mx-auto min-h-screen max-w-4xl px-5 pt-[93px] md:pt-[96px] pb-[317px] md:pb-[246px]">
       <Typography
         as="h1"
         variant="title"
@@ -44,5 +47,7 @@ export const Profile = () => {
         <ProfileForm userInfo={userInfo} />
       )}
     </main>
+    <Footer />
+    </div>
   );
 };

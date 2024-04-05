@@ -1,10 +1,40 @@
+import { useEffect, useState } from "react";
 import { Typography } from "../components/Typography";
+import { useAuth } from "../hooks/useAuth";
 import { Footer } from "../sections/Footer";
+import { User } from "../types/User";
+import { DecodeInfoProps } from "../types/DecodeInfoProps";
+import { jwtDecode } from "jwt-decode";
+import { Header } from "../sections/Header";
 
 export const PoliticaCookies = () => {
+  const { userJWT } = useAuth();
+  const [userInfo, setUserInfo] = useState<User | null>();
+  const [loading, setLoading] = useState<boolean>();
+
+  useEffect(() => {
+    if (userJWT !== null) {
+      const decode: DecodeInfoProps = jwtDecode(userJWT);
+      const userId: number = decode.idUser;
+
+      setLoading(true);
+
+      fetch(`http://localhost:8080/api/users/${userId}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setUserInfo(data);
+          setLoading(false);
+        })
+        .catch(() => {
+          setLoading(false);
+        });
+    }
+  }, [userJWT]);
+
   return (
     <div className="relative">
-      <main className="mx-auto min-h-screen max-w-4xl px-5 pt-10 space-y-5 pb-[317px] md:pb-[246px]">
+      <Header loading={loading} userInfo={userInfo} />
+      <main className="mx-auto min-h-screen max-w-4xl px-5 pt-[93px] md:pt-[96px] space-y-5 pb-[317px] md:pb-[246px]">
         <Typography
           as="h1"
           variant="title"
