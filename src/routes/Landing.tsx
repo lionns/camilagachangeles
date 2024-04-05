@@ -1,4 +1,5 @@
 import { AboutLanding } from "../sections/AboutLanding";
+import { ContactLanding } from "../sections/ContactLanding";
 import { CoursesLanding } from "../sections/CoursesLanding";
 import { EventsLanding } from "../sections/EventsLanding";
 import { Footer } from "../sections/Footer";
@@ -14,6 +15,7 @@ export const Landing = () => {
         <CoursesLanding />
         <TestimonyLanding />
         <AboutLanding />
+        <ContactLanding />
       </main>
       <Footer />
     </div>

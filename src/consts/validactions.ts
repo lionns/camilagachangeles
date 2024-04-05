@@ -74,3 +74,15 @@ export const validateTextNumber = (text: string): string => {
 
   return ""; // Devuelve una cadena vacía si no se encontraron errores
 };
+
+export const validatePhoneNumber = (numero: string): string => {
+  // Expresión regular para validar números de teléfono con formato internacional
+  const regexNumeroTelefono = /^\+\d{1,3}\d{6,14}$/;
+
+  // Comprobamos si el número tiene el formato correcto
+  if (!numero.match(regexNumeroTelefono)) {
+    return `El número no tiene un formato válido.`;
+  }
+
+  return "";
+};

@@ -53,19 +53,20 @@ export const SignupForm = () => {
       return false;
     }
 
-    // try {
-    //   const response = await fetch("http://localhost:8080/api/users", {
-    //     method: "POST",
-    //     body: JSON.stringify({ name: name, email: email, password: password }),
-    //   });
+    try {
+      const response = await fetch("http://localhost:8080/api/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name: name, email: email, password: password }),
+      });
 
-    //   const result = await response.json();
-    //   console.log(result);
-    // } catch (error) {
-    //   console.log(error);
-    // }
-
-    console.log("¡Registro de usuario!");
+      const result = await response.json();
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
