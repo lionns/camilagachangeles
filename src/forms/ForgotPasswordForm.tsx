@@ -47,7 +47,7 @@ export const ForgotPasswordForm = () => {
             as="a"
             color="marron"
             content="Iniciar sesión"
-            href="/iniciar-sesion"
+            href="/inicio-de-sesion"
             customClasses="w-full text-center"
           />
         </div>
